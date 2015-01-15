@@ -16,7 +16,30 @@ app.factory('assignmentService', [function () {
     return {
         getAssignments: function () {
             return [
-                {name: "One", ref: "assign01.html"}
+                {name: "Coming Soon", ref: "https://www.youtube.com/watch?v=dQw4w9WgXcQ"},
+                {name: "To a Theater near you", ref: "https://www.youtube.com/watch?v=MZoO8QVMxkk"},
+                {name: "Rick Roll", ref: "https://www.youtube.com/watch?v=dQw4w9WgXcQ"}
+            ];
+        }
+    };
+}]);
+
+app.factory('logoService', [function () {
+    return {
+        getLogos: function () {
+            return [
+                {name: "Bootstrap", ref: "img/bootstrap.png", link: "http://getbootstrap.com/"},
+                {name: "Git", ref: "img/git-logo.jpg", link: "http://git-scm.com/"},
+                {name: "HTML5", ref: "img/html5.png", link: "http://www.w3.org/html/logo/"},
+                {name: "Javascript", ref: "img/javascript.png", link: "http://www.w3.org/standards/webdesign/script.html"},
+                {name: "JQuery", ref: "img/jquery.jpg", link: "http://jquery.com/"},
+                {name: "AngularJs", ref: "img/angularjs.png", link: "https://angularjs.org/"},
+                {name: "CSS_sucks", ref: "img/css_sucks.jpg", link: "http://css-tricks.com/awesome-css-themed-t-shirts/"},
+                {name: "Open Shift", ref: "img/openshift.svg", link: "https://www.openshift.com/"},
+                {name: "PHP", ref: "img/php.jpg", link: "http://php.net/"},
+                {name: "MySQL", ref: "img/mysql.jpg", link: "http://www.mysql.com/"},
+                {name: "GitHub", ref: "img/github.jpg", link: "https://github.com/"},
+                {name: "Jenkins", ref: "img/headshot.png", link: "http://jenkins-ci.org/"}
             ];
         }
     };
@@ -38,13 +61,14 @@ app.controller('headerController', ['$scope', function ($scope) {
     $scope.subtitle  = "In teaching others we teach ourselves";
 }]);
 
-app.controller('navController', ['$scope', 'assignmentService', function ($scope, assignmentService) {
+app.controller('navController', ['$scope', 'assignmentService', 'logoService', function ($scope, assignmentService, logoService) {
     $scope.links = [
         {name: "GitHub", ref: "https://github.com/Samuel-Graham"},
         {name: "Hacker Rank", ref: "https://www.hackerrank.com/samgraham"},
         {name: "Stack Overflow", ref: "http://stackoverflow.com/users/2521049/sam-graham"}
     ];
     $scope.assignments = assignmentService.getAssignments();
+    $scope.logos       = logoService.getLogos();
 }]);
 
 app.controller('footerController', ['$scope', function ($scope) {
@@ -52,3 +76,7 @@ app.controller('footerController', ['$scope', function ($scope) {
     $scope.phone = '(425) 999-5539';
     $scope.email = 'samgraham@outlook.com';
 }]);
+
+app.controller('logoController', ['$scope', 'logoService', function ($scope, logoService) {
+    $scope.logos = logoService.getLogos();
+}])
