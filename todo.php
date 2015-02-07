@@ -1,7 +1,8 @@
 <?php
+	echo "Php!";
 	require('dbConnection.php');
 	$db = loadDatabase();
-
+	echo $db;
 	$stmt = $db->query($q_getAll);
 	$results = $stmt->fetchAll(PDO::FETCH_ASSOC);
         
