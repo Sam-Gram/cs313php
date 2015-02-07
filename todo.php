@@ -1,7 +1,7 @@
 <?php
 	echo "Php!";
-	require 'dbConnection.php';
-	require 'queries.php';
+	require '../dbConnection.php';
+	require '../queries.php';
 	$db = loadDatabase();
 	echo $db;
 	$stmt = $db->query($q_getAll);
