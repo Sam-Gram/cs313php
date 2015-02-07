@@ -6,5 +6,5 @@
 		$dbPassword = getenv('OPENSHIFT_MYSQL_DB_PASSWORD');	
 		$db = new PDO("mysql:host=$dbHost:$dbPort;dbname=$dbName", $dbUser, $dbPassword);
 		return $db;
-		}
+	}
 ?>
