@@ -4,10 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Sam Graham's Homepage</title>
-    <script src="js/samsApp.js"></script>
+
     <?php
         require 'head.php';
     ?>
+    <script src="js/samsApp.js"></script>
 </head>
 <body ng-app="samsApp" class="container">
 <header class="page-header">
