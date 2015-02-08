@@ -1,17 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Todo</title>
+    <?php
+        require 'head.php';
+    ?>
+</head>
+<body class="container">
 <?php
 	error_reporting(E_ALL);
-	echo "Php!";
+	echo "<h1>Php!</h1>";
 	require 'dbConnection.php';
 	require 'queries.php';
 	$db = loadDatabase();
-	echo $db;
+//    echo $q_getAll;
 	$stmt = $db->query($q_getAll);
-	$results = $stmt->fetchAll(PDO::FETCH_ASSOC);
-        
-	foreach ($results as $temp) {
-		echo $temp;
-		foreach($temp as $temp1) {
-			      echo $temp1;
-		}
-	}
+
+    print '<table class="table table-hover">';
+    print '<tr>';
+    print '<th>User</th>';
+    print '<th>List</th>';
+    print '<th>Item</th>';
+    print '</tr>';
+    foreach ($stmt as $test) {
+        print '<tr>';
+        print '<td>' . $test['user_name'] . '</td>';
+        print '<td>' . $test['list_name'] . '</td>';
+        print '<td>' . $test['item_text'] . '</td>';
+        print '</tr>';
+    }
+    print '</table>';
 ?>
+</body>
+</html>

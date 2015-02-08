@@ -4,15 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Sam Graham's Homepage</title>
-    <script src="js/jquery-1.11.2.min.js"></script>
-    <script src="js/angular.min.js"></script>
-    <script src="js/angular-route.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
     <script src="js/samsApp.js"></script>
-
-    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
-    <link rel="stylesheet" type="text/css" href="css/app.css">
-    <link rel="stylesheet" type="text/css" href="css/hover.css">
+    <?php
+        require 'head.php';
+    ?>
 </head>
 <body ng-app="samsApp" class="container">
 <header class="page-header">
