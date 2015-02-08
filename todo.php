@@ -23,12 +23,14 @@
     print '<th>User</th>';
     print '<th>List</th>';
     print '<th>Item</th>';
+    print '<th>Due Date</th>';
     print '</tr>';
     foreach ($stmt as $test) {
         print '<tr>';
         print '<td>' . $test['user_name'] . '</td>';
         print '<td>' . $test['list_name'] . '</td>';
         print '<td>' . $test['item_text'] . '</td>';
+        print '<td>' . ($test['item_due_date'] ? $test['item_due_date'] : 'None Set') . '</td>';
         print '</tr>';
     }
     print '</table>';
