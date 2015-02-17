@@ -10,7 +10,7 @@
     <h1 class="col-sm-12 col-md-12 col-lg-12">Todo Login</h1>
 <form action="todo.php" method="POST">
     <div class="col-md-12 col-lg-12 col-sm-12">Username: <input type="text" placeholder="Username" name="username" class="form-control"/></div>
-    <div class="col-md-12 col-lg-12 col-sm-12">Password: <input type="text" placeholder="Password" name="password" class="form-control"/></div>
+    <div class="col-md-12 col-lg-12 col-sm-12">Password: <input type="password" placeholder="Password" name="password" class="form-control"/></div>
     <div class="col-md-12 col-lg-12 col-sm-12"><input type="submit" value="Submit" /></div>
 </form>
 </div>
