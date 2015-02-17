@@ -6,4 +6,5 @@
     $q_addItem = 'INSERT INTO item VALUES (NULL, (SELECT l.list_id FROM list l JOIN user u ON u.user_id = l.user_id WHERE :listname = l.list_name AND :username = u.user_name AND :password = u.user_password), :itemname, :itemduedate)';
 
     $q_deleteItem = 'DELETE i FROM item i INNER JOIN list l ON i.list_id = l.list_id INNER JOIN user u ON u.user_id = l.user_id WHERE :listname = l.list_name AND :username = u.user_name AND :password = u.user_password AND :itemname = i.item_text';
+    $q_deleteList = 'DELETE i, l FROM item i RIGHT JOIN list l ON i.list_id = l.list_id INNER JOIN user u ON u.user_id = l.user_id WHERE :listname = l.list_name AND :username = u.user_name AND :password = u.user_password';
 ?>

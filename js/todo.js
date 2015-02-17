@@ -53,6 +53,23 @@ function deleteItem(username, password, pListName, pListItem, pListItemDueDate) 
 
 }
 
+function deleteList(username, password, pListName) {
+    $.ajax({
+        type: "POST",
+        url:  "deleteList.php",
+        data: {
+            username: username,
+            password: password,
+            listname: pListName
+        },
+        success: function () {
+            location.reload()
+        },
+        dataType: 'json'
+    });
+
+}
+
 $(document).ready (function () {
     $('#addListForm').click(function (e){
         addList(username, password, $('#newlistname').val())
@@ -66,6 +83,9 @@ $(document).ready (function () {
             addItem(username, password, $(e.target).attr('list'), $(e.target).val());
         }
     });
+    $('span.list-name > span').click(function (e) {
+        deleteList(username, password, $(e.target).attr('list'));
+    })
 });
 
 

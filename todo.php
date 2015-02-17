@@ -73,9 +73,11 @@ if ($result['user_name'] && $result['user_password']) {
 
     // Produce Html
     foreach ($lists as $name => $list) {
-        print "<div class='col-lg-3 col-md-3 col-sm-3 list-group'><span class='label label-default'>$name</span>";
+        print "<div class='col-lg-3 col-md-3 col-sm-3 list-group'><span class='label label-default list-name'>$name<span class='glyphicon glyphicon-remove' list=\"$name\"></span></span>";
         foreach ($list as $item) {
-          print "<div class='list-group-item'>" . $item . "<span type='button' class='list-item glyphicon glyphicon-remove' list='$name' item='$item'><span/>" . "</div>";
+          if ($item) {
+              print "<div class='list-group-item'>" . $item . "<span type='button' class='list-item glyphicon glyphicon-remove' list='$name' item='$item'><span/>" . "</div>";
+          }
         }
         print "<input class='list-group-item list-item-add' list='$name' type='text' placeholder='Add Item'>";
         print  "</div>";
