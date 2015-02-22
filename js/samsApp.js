@@ -16,10 +16,9 @@ app.factory('assignmentService', [function () {
     return {
         getAssignments: function () {
             return [
-                {name: "Coming Soon", ref: "https://www.youtube.com/watch?v=dQw4w9WgXcQ"},
-                {name: "To a Theater near you", ref: "https://www.youtube.com/watch?v=MZoO8QVMxkk"},
                 {name: "PHP Survey", ref: "vote.php"},
-                {name: "Todo", ref: "todo.php"}
+                {name: "Todo", ref: "todo.php"},
+                {name: "Todo Login", ref: "todoLogin.php"},
             ];
         }
     };

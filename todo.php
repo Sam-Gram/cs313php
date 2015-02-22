@@ -1,20 +1,25 @@
 <?php
 // Handle redirect if the person is a fink
-$username = $_POST['username'];
-$password = $_POST['password'];
+$username = htmlspecialchars($_POST['username']);
+$password = htmlspecialchars($_POST['password']);
 
 require 'queries.php';
 require 'dbConnection.php';
+require 'password.php';
+
 $db       = loadDatabase();
 $stmt     = $db->prepare($q_getUser);
+
 $stmt->bindParam(':username', $username);
-$stmt->bindParam(':password', $password);
 $stmt->execute();
 $result   = $stmt->fetch();
-if ($result['user_name'] && $result['user_password']) {
+
+if (password_verify($password, $result['user_password'])) {
     $user = $result['user_name'];
 } else {
-    header('Location: errorHorror.php');
+    //header('Location: errorHorror.php');
+    //echo $password;
+    //echo $result['password'];
 }
 ?>
 <!DOCTYPE html>
