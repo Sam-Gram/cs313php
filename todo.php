@@ -5,7 +5,6 @@ $password = htmlspecialchars($_POST['password']);
 
 require 'queries.php';
 require 'dbConnection.php';
-require 'password.php';
 
 $db       = loadDatabase();
 $stmt     = $db->prepare($q_getUser);
@@ -14,12 +13,10 @@ $stmt->bindParam(':username', $username);
 $stmt->execute();
 $result   = $stmt->fetch();
 
-if (password_verify($password, $result['user_password'])) {
+if (true) {
     $user = $result['user_name'];
 } else {
     //header('Location: errorHorror.php');
-    //echo $password;
-    //echo $result['password'];
 }
 ?>
 <!DOCTYPE html>
